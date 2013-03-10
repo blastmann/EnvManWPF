@@ -1,6 +1,6 @@
 # EnvMan WPF
 
-[Envman](http://sourceforge.net/projects/env-man/) is an environmant variables management application wroted by [v_setchin](http://sourceforge.net/users/v_setchin). I am going to rewrote its UI by WPF.
+[Envman](http://sourceforge.net/projects/env-man/) is an environmant variables management application wroted by [v_setchin](http://sourceforge.net/users/v_setchin). I am going to rewrite its UI by WPF.
 
 #License
 
