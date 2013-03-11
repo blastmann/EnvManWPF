@@ -29,28 +29,31 @@ namespace EnvManWPF
         public MainWindow()
         {
             InitializeComponent();
-            LoadEnvironmentVars();
         }
 
         private void LoadEnvironmentVars()
         {
-            LoadEnvironmentVariables(this.dgv, EnvironmentVariableTarget.User);
+            LoadEnvironmentVariables(this.dgUser, EnvironmentVariableTarget.User);
+            LoadEnvironmentVariables(this.dgSys, EnvironmentVariableTarget.Machine);
         }
 
         /// <summary>
         /// Loads the environment variables.
         /// </summary>
-        /// <param name="dgv">The Data Grid View.</param>
+        /// <param name="dg">The Data Grid View.</param>
         /// <param name="target">The target.</param>
         private void LoadEnvironmentVariables(
-            DataGrid dgv, EnvironmentVariableTarget target)
+            DataGrid dg, EnvironmentVariableTarget target)
         {
-            EnvVarValueValidator validator = new EnvVarValueValidator();
-
             IDictionary environmentVariables
                 = this.variableManger.GetEnvVariables(target);
 
-            dgv.ItemsSource = environmentVariables;
+            dg.ItemsSource = environmentVariables;
+        }
+
+        private void Tab_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            LoadEnvironmentVars();
         }
     }
 }

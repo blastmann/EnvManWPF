@@ -9,13 +9,20 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Red.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/.xaml" />-->
             </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>  
+        </ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <DataGrid x:Name="dgv">
-        </DataGrid>
+        <TabControl Loaded="Tab_OnLoaded">
+            <TabItem Header="User">
+                <DataGrid x:Name="dgUser"></DataGrid>
+            </TabItem>
+            <TabItem Header="System">
+                <DataGrid x:Name="dgSys"></DataGrid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Controls:MetroWindow>
