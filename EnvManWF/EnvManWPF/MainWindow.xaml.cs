@@ -33,8 +33,8 @@ namespace EnvManWPF
 
         private void LoadEnvironmentVars()
         {
-            LoadEnvironmentVariables(this.dgUser, EnvironmentVariableTarget.User);
-            LoadEnvironmentVariables(this.dgSys, EnvironmentVariableTarget.Machine);
+            //LoadEnvironmentVariables(this.dgUser, EnvironmentVariableTarget.User);
+            //LoadEnvironmentVariables(this.dgSys, EnvironmentVariableTarget.Machine);
         }
 
         /// <summary>
@@ -45,6 +45,8 @@ namespace EnvManWPF
         private void LoadEnvironmentVariables(
             DataGrid dg, EnvironmentVariableTarget target)
         {
+            dg.IsReadOnly = true;
+
             IDictionary environmentVariables
                 = this.variableManger.GetEnvVariables(target);
 
@@ -53,7 +55,7 @@ namespace EnvManWPF
 
         private void Tab_OnLoaded(object sender, RoutedEventArgs e)
         {
-            LoadEnvironmentVars();
+            //LoadEnvironmentVars();
         }
     }
 }
