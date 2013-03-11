@@ -1,22 +1,5 @@
 *.Cache
 
-/EnvManWF/EnvMan/EnvMan/bin
-/EnvManWF/EnvMan/EnvMan/obj
-/EnvManWF/EnvMan.Tests/EnvManagerTest/bin
-/EnvManWF/EnvMan.Tests/EnvManagerTest/obj
-/EnvManWF/EnvMan.Tests/EnvManTest/bin
-/EnvManWF/EnvMan.Tests/EnvManTest/obj
-/EnvManWF/EnvMan/EnvManager/bin
-/EnvManWF/EnvMan/EnvManager/obj
-/EnvManWF/EnvManSetup/*.user
-/EnvManWF/EnvManSetup/bin
-/EnvManWF/EnvManSetup/obj
-/EnvManWF/EnvManWFSetup/Debug
-/EnvManWF/EnvManWFSetup/Release
-/EnvManWF/EnvMan.Tests/EnvMan.Tests.VisualState.xml
-/EnvManWF/EnvManWPF/bin
-/EnvManWF/EnvManWPF/obj
-
 #ignore thumbnails created by windows
 Thumbs.db
 #Ignore files build by Visual Studio
