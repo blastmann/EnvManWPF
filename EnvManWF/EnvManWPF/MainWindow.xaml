@@ -16,11 +16,11 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <TabControl Loaded="Tab_OnLoaded">
+        <TabControl Loaded="Tab_OnLoaded" DataContext="{StaticResource tabVM}" ItemsSource="{Binding tabs}">
             <TabControl.ItemTemplate>
                 <DataTemplate>
-                    <TabItem>
-                        <DataGrid></DataGrid>
+                    <TabItem Header="{Binding Header}">
+                        <DataGrid ItemsSource="{Binding Data}" AutoGenerateColumns="True"></DataGrid>
                     </TabItem>
                 </DataTemplate>
             </TabControl.ItemTemplate>

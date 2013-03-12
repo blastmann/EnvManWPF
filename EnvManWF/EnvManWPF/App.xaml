@@ -1,8 +1,8 @@
 ﻿<Application x:Class="EnvManWPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:EnvManWPF="clr-namespace:EnvManWPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <EnvManWPF:TabItemVM x:Key="tabVM"></EnvManWPF:TabItemVM>
     </Application.Resources>
 </Application>

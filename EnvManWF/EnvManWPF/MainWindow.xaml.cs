@@ -24,7 +24,7 @@ namespace EnvManWPF
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
-        private EnvVarManager variableManger = new EnvVarManager();        
+        private EnvVarManager variableManger = new EnvVarManager();
 
         public MainWindow()
         {
