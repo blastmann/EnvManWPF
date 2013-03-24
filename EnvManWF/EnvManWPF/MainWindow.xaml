@@ -16,14 +16,17 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <TabControl Loaded="Tab_OnLoaded">
+        <TabControl x:Name="MainData" Loaded="MainData_OnLoaded">
             <TabControl.ItemTemplate>
                 <DataTemplate>
-                    <TabItem>
-                        <DataGrid></DataGrid>
-                    </TabItem>
+                    <TextBlock Text="{Binding EnvVarType}"></TextBlock>
                 </DataTemplate>
             </TabControl.ItemTemplate>
+            <TabControl.ContentTemplate>
+                <DataTemplate>
+                    <DataGrid ItemsSource="{Binding VarDict}" IsReadOnly="True"></DataGrid>
+                </DataTemplate>
+            </TabControl.ContentTemplate>
         </TabControl>
     </Grid>
 </Controls:MetroWindow>

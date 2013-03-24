@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,38 +25,30 @@ namespace EnvManWPF
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
-        private EnvVarManager variableManger = new EnvVarManager();        
+        private List<EnvVarViewItem> VarItems = new List<EnvVarViewItem>();
 
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void LoadEnvironmentVars()
+        private void LoadData()
         {
-            //LoadEnvironmentVariables(this.dgUser, EnvironmentVariableTarget.User);
-            //LoadEnvironmentVariables(this.dgSys, EnvironmentVariableTarget.Machine);
+            VarItems.Add(new EnvVarViewItem(EnvironmentVariableTarget.User));
+            VarItems.Add(new EnvVarViewItem(EnvironmentVariableTarget.Machine));
         }
 
-        /// <summary>
-        /// Loads the environment variables.
-        /// </summary>
-        /// <param name="dg">The Data Grid View.</param>
-        /// <param name="target">The target.</param>
-        private void LoadEnvironmentVariables(
-            DataGrid dg, EnvironmentVariableTarget target)
+        private void MainData_OnLoaded(object sender, RoutedEventArgs e)
         {
-            dg.IsReadOnly = true;
-
-            IDictionary environmentVariables
-                = this.variableManger.GetEnvVariables(target);
-
-            dg.ItemsSource = environmentVariables;
-        }
-
-        private void Tab_OnLoaded(object sender, RoutedEventArgs e)
-        {
-            //LoadEnvironmentVars();
+            try
+            {
+                LoadData();
+                MainData.ItemsSource = VarItems;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
         }
     }
 }
